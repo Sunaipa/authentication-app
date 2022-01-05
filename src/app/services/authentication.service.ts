@@ -1,3 +1,4 @@
+import { User, UserInterface } from './../models/user.model';
 import { Injectable } from '@angular/core';
 
 export interface CredentialInterface {
@@ -10,12 +11,21 @@ export interface CredentialInterface {
 })
 export class AuthenticationService {
 
+  user: UserInterface;
 
-
-  constructor() { }
+  constructor() {
+    this.user = new User();
+   }
 
   authenticate(credentials: CredentialInterface) {
-    return  credentials.login === 'user' &&
-            credentials.password === '123';
+    const isAuthenticated =  credentials.login === 'user' && credentials.password === '123';
+
+    if (isAuthenticated) {
+      this.user = new User({
+        userName: 'Default User',
+        login: credentials.login
+      });
+    }
+    return isAuthenticated;
   }
 }
