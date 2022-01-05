@@ -1,7 +1,7 @@
-import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
-import { CredentialInterface } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
+import { AuthentificationService, CredentialInterface } from 'src/app/services/authentification.service';
+
 
 @Component({
   selector: 'app-login',
@@ -11,27 +11,24 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   userInput: CredentialInterface = {
-    login: '',
-    password: ''
+    login:'',
+    password:''
   };
 
-  isAuthenticated = false;
+  isAuthentificated = false;
   isSubmitted = false;
 
-  constructor(private security: AuthenticationService, 
-              private router: Router) { }
+
+  constructor(private security: AuthentificationService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   validateForm(): void {
     this.isSubmitted = true;
-    this.isAuthenticated = this.security.authenticate(this.userInput);
-    if (this.isAuthenticated) {
+    this.isAuthentificated = this.security.authentificate(this.userInput);
+    if(this.isAuthentificated) {
       this.router.navigate(['/home'])
-    }else{
-      console.log('KO');
-    }
+    } 
   }
-
 }

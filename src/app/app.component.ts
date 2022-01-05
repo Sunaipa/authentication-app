@@ -1,5 +1,6 @@
+import { AuthentificationService } from 'src/app/services/authentification.service';
 import { Component } from '@angular/core';
-import { AuthenticationService } from './services/authentication.service';
+import { NotificationService } from './services/notification.service';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,9 @@ import { AuthenticationService } from './services/authentication.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'authentication-app';
+  title = 'MyApp';
 
-  constructor(public security: AuthenticationService){
-
+  constructor(public security: AuthentificationService, public notification: NotificationService) {
+    
   }
 }
