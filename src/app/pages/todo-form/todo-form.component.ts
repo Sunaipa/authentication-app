@@ -24,7 +24,7 @@ export class TodoFormComponent implements OnInit {
 
   validateForm(): void {
     this.todoListService.addTodo(this.userInput)
-    this.router.navigate(['/todolist'])
+    this.router.navigate(['/todoList'])
   }
 
 }
