@@ -7,7 +7,7 @@ import { NotificationService } from '../services/notification.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuardGuard implements CanActivate {
+export class AuthGuard implements CanActivate {
 
    constructor(private security: AuthentificationService, private notification: NotificationService) {
 
