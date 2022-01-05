@@ -11,8 +11,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'secure', component: SecureComponent, canActivate:[AuthGuard]},
-  {path: 'todolist', component: TodoListComponent},
-  {path: 'TodoForm', component: TodoFormComponent},
+  {path: 'todoList', component: TodoListComponent},
+  {path: 'todoForm', component: TodoFormComponent},
   {path: '', redirectTo: '/home', pathMatch:'full'}
 ];
 

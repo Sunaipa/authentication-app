@@ -1,1 +1,17 @@
-<p>todo-form works!</p>
+
+
+<div class="container-fluid p-4">
+    <div class="mb-2">
+        <label for="" class="form-label"> Titre </label>
+        <input class="form-control" type="text" id=""
+        [(ngModel)]="userInput.titre">
+    </div>
+    <div class="mb-2">
+        <label for="" class="form-label"> Détail</label>
+        <input class="form-control" type="text" id=""
+        [(ngModel)]="userInput.detail">
+    </div>
+    <button class="btn btn-primary" (click)="validateForm()">
+        Ajouter
+    </button>
+</div>
