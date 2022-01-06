@@ -15,8 +15,9 @@
                 <td>
                     <input type="checkbox" [checked]="task.done">
                 </td>
+                <td>{{ task.taskName }}</td>
                 <td>
-                    {{ task.taskName }}
+                    <button class="btn btn-success">Modifier</button>
                 </td>
                 <td>
                     <button class="btn btn-danger" (click)="taskService.deleteTask(task.id)">X</button>

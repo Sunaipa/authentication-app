@@ -26,6 +26,9 @@ export class TodoService {
    deleteTask(id: number | undefined): void {
     const index = this.taskList.findIndex(item => item.id == id);
     this.taskList.splice(index, 1)
-    
+   }
+
+   updateTask(id: number | undefined ): void {
+    const index = this.taskList.findIndex(item => item.id == id);
    }
 }

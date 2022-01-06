@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { TodoService } from '../../../services/todo.service';
 import { Todo, } from '../../../models/todo.model';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +10,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoFormComponent implements OnInit {
 
-
   task: Todo;
 
   constructor(private taskService: TodoService,
@@ -19,7 +18,8 @@ export class TodoFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
+    
+}
 
   validateForm() {
     this.taskService.addTask(this.task);
