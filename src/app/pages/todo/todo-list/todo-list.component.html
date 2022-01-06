@@ -7,6 +7,8 @@
             <tr>
                 <th>Statut</th>
                 <th>Tâche</th>
+                <th>Responsable</th>
+                <th></th>
                 <th></th>
             </tr>
         </thead>
@@ -17,7 +19,10 @@
                 </td>
                 <td>{{ task.taskName }}</td>
                 <td>
-                    <button class="btn btn-success">Modifier</button>
+                    {{ task.user }}
+                </td>
+                <td>
+                    <button class="btn btn-warning" routerLink="/todo-form/{{task.id}}">Modifier</button>
                 </td>
                 <td>
                     <button class="btn btn-danger" (click)="taskService.deleteTask(task.id)">X</button>
