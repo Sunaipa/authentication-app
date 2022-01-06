@@ -1,7 +1,6 @@
 import { Router } from '@angular/router';
-import { TodoListComponent } from '../todo-list/todo-list.component';
 import { TodoService } from '../../../services/todo.service';
-import { TodoDataInterface } from '../../../models/Todo.model';
+import { Todo, } from '../../../models/todo.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,20 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoFormComponent implements OnInit {
 
-  userInput: TodoDataInterface = {
-    titre:'',
-    detail: ''
-  };
 
-  constructor(private todoListService: TodoService,
-              private router: Router) { }
+  task: Todo;
+
+  constructor(private taskService: TodoService,
+              private router: Router) {
+    this.task = this.taskService.getNewTodo();
+  }
 
   ngOnInit(): void {
   }
 
-  validateForm(): void {
-    this.todoListService.addTodo(this.userInput)
-    this.router.navigate(['/todoList'])
+  validateForm() {
+    this.taskService.addTask(this.task);
+    this.router.navigate(['/todo-list'])
   }
-
 }

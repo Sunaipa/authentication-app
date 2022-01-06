@@ -1,17 +1,17 @@
-
-
 <div class="container-fluid p-4">
+
     <div class="mb-2">
-        <label for="" class="form-label"> Titre </label>
-        <input class="form-control" type="text" id=""
-        [(ngModel)]="userInput.titre">
+        <label class="form-label">Tâche</label>
+        <input class="form-control" type="text" [(ngModel)]="task.taskName">
     </div>
-    <div class="mb-2">
-        <label for="" class="form-label"> Détail</label>
-        <input class="form-control" type="text" id=""
-        [(ngModel)]="userInput.detail">
+
+    <div class="mb-2 form-check">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="task.done">
+        <label class="form-check-label">Terminée</label>
     </div>
-    <button class="btn btn-primary" (click)="validateForm()">
-        Ajouter
-    </button>
+
+    <button class="btn btn-primary" (click)="validateForm()">Valider</button>
+
 </div>
+
+{{ task | json }}
