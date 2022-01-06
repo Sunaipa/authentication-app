@@ -9,12 +9,14 @@ export class TodoService {
   search: string = '';
 
   taskList: Todo[] = [
-    new Todo({taskName: 'Faire le ménage', done: false, id: 1, user: 'ada'}),
-    new Todo({taskName: 'Apprendre le Polonais', done: false, id: 2, user: 'Alan'}),
+    new Todo({taskName: 'Faire le ménage', done: false, id: 1, user: 'titi'}),
+    new Todo({taskName: 'Apprendre le Polonais', done: false, id: 2, user: 'tutu'}),
   ];
 
+  filteredTaskList: Todo[] = [];
+
   constructor() {
-    
+    this.filterTask();
    }
 
    getNewTodo(): Todo {
@@ -37,4 +39,14 @@ export class TodoService {
     const task =  this.taskList.find(item => item.id == id);
     return task || new Todo();
    }
+
+   filterTask(): void {
+    if (this.search) {
+      this.filteredTaskList = this.taskList.filter(item => item.user == this.search);
+    }else {
+      this.filteredTaskList = [...this.taskList];
+    }
+
+
+  }
 }

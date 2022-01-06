@@ -10,6 +10,7 @@ import { AuthentificationService } from 'src/app/services/authentification.servi
 export class SelectUserComponent implements OnInit {
 
   @Input() label: string = 'Responsable';
+  @Input() firstOptionLabel: string = '';
   @Input() user: string ='';
   @Output() userChange = new EventEmitter
   constructor( public security: AuthentificationService ) { }
