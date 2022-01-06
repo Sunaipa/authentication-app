@@ -5,6 +5,15 @@
         <input class="form-control" type="text" [(ngModel)]="task.taskName">
     </div>
 
+    <div class="mb-2">
+        <label class="form-label">Responsable</label>
+        <select class="form-select" [(ngModel)]="task.user"> 
+            <option *ngFor="let user of security.userList" [value]="user.login">
+                {{ user.userName }}
+            </option>
+        </select>
+    </div>
+
     <div class="mb-2 form-check">
         <input class="form-check-input" type="checkbox" [(ngModel)]="task.done">
         <label class="form-check-label">Terminée</label>

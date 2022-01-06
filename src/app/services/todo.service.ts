@@ -7,8 +7,8 @@ import { Todo } from '../models/todo.model';
 export class TodoService {
 
   taskList: Todo[] = [
-    new Todo({taskName: 'Faire le ménage', done: false, id: 1}),
-    new Todo({taskName: 'Apprendre le Polonais', done: false, id: 2}),
+    new Todo({taskName: 'Faire le ménage', done: false, id: 1, user: 'ada'}),
+    new Todo({taskName: 'Apprendre le Polonais', done: false, id: 2, user: 'Alan'}),
   ];
 
   constructor() {
@@ -19,16 +19,20 @@ export class TodoService {
      return new Todo();
    }
 
-   addTask(data: Todo): void {
-    this.taskList.push(data);
+   saveTask(data: Todo): void {
+      const taskExist = this.taskList.find(item => item.id == data.id)
+    if (! taskExist) {
+      this.taskList.push(data);
+    } 
    }
 
    deleteTask(id: number | undefined): void {
     const index = this.taskList.findIndex(item => item.id == id);
     this.taskList.splice(index, 1)
    }
-   // Update
-   updateTask(id: number | undefined ): void {
-    const index = this.taskList.findIndex(item => item.id == id);
+
+   getOneById(id: number): Todo {
+    const task =  this.taskList.find(item => item.id == id);
+    return task || new Todo();
    }
 }
