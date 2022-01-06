@@ -1,5 +1,5 @@
-import { TodoFormComponent } from './pages/todo-form/todo-form.component';
-import { TodoListComponent } from './pages/todo-list/todo-list.component';
+import { TodoFormComponent } from './pages/todo/todo-form/todo-form.component';
+import { TodoListComponent } from './pages/todo/todo-list/todo-list.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,8 +11,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'secure', component: SecureComponent, canActivate:[AuthGuard]},
-  {path: 'todoList', component: TodoListComponent},
-  {path: 'todoForm', component: TodoFormComponent},
+  {path: 'todo-list', component: TodoListComponent},
+  {path: 'todo-form', component: TodoFormComponent},
   {path: '', redirectTo: '/home', pathMatch:'full'}
 ];
 

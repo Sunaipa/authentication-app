@@ -1,0 +1,29 @@
+<div class="p-4">
+
+    <button class="btn btn-primary mt-3 mb-2" routerLink="/todo-form">Ajouter une tache</button>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Statut</th>
+                <th>Tâche</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of taskService.taskList" >
+                <td>
+                    <input type="checkbox" [checked]="task.done">
+                </td>
+                <td>{{ task.taskName }}</td>
+                <td>
+                    <button class="btn btn-success">Modifier</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="taskService.deleteTask(task.id)">X</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

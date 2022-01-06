@@ -1,25 +1,34 @@
 import { Injectable } from '@angular/core';
-import { Todo, TodoDataInterface } from '../models/Todo.model';
+import { Todo } from '../models/todo.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
 
-  todo: TodoDataInterface;
-
-  todoList: TodoDataInterface[] = [
-    {titre: 'Sortir le chien', detail: 'ce soir 05/01/2022'},
-    {titre: 'Commander sur amazon', detail: 'Cadeaux anniv'},
-    {titre: 'etetetet', detail: 'ryryryryry'},
-    {titre: 'dfdfdfdfdf', detail: 'ghghghghgh'}
-  ]
+  taskList: Todo[] = [
+    new Todo({taskName: 'Faire le ménage', done: false, id: 1}),
+    new Todo({taskName: 'Apprendre le Polonais', done: false, id: 2}),
+  ];
 
   constructor() {
-    this.todo = new Todo();
+    
    }
 
-   addTodo(todo: TodoDataInterface) {
-    this.todoList.push(todo);
+   getNewTodo(): Todo {
+     return new Todo();
+   }
+
+   addTask(data: Todo): void {
+    this.taskList.push(data);
+   }
+
+   deleteTask(id: number | undefined): void {
+    const index = this.taskList.findIndex(item => item.id == id);
+    this.taskList.splice(index, 1)
+   }
+
+   updateTask(id: number | undefined ): void {
+    const index = this.taskList.findIndex(item => item.id == id);
    }
 }

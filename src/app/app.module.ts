@@ -8,8 +8,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthentificationService } from './services/authentification.service';
 import { SecureComponent } from './pages/secure/secure.component';
-import { TodoListComponent } from './pages/todo-list/todo-list.component';
-import { TodoFormComponent } from './pages/todo-form/todo-form.component';
+import { TodoListComponent } from './pages/todo/todo-list/todo-list.component';
+import { TodoFormComponent } from './pages/todo/todo-form/todo-form.component';
 
 @NgModule({
   declarations: [
