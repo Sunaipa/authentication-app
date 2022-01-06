@@ -18,6 +18,9 @@
                 <td>
                     {{ task.taskName }}
                 </td>
+                <td>
+                    <button class="btn btn-danger" (click)="taskService.deleteTask(task.id)">X</button>
+                </td>
             </tr>
         </tbody>
     </table>

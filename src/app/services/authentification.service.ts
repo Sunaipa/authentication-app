@@ -16,9 +16,9 @@ export class AuthentificationService {
   user: UserInterface;
 
   userList: UserDataInterface[] = [
-    {login: 'jerem', userName: 'jShaaqx', password: '123'},
-    {login: 'jerem1', userName: 'jShaaqx1', password: '123'},
-    {login: 'jerem2', userName: 'jShaaqx2', password: '123'},
+    {login: 'titi', userName: 'tititi', password: '123'},
+    {login: 'toto', userName: 'tototo', password: '123'},
+    {login: 'tutu', userName: 'tututu', password: '456'},
 
   ]
 
