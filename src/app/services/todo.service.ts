@@ -6,6 +6,8 @@ import { Todo } from '../models/todo.model';
 })
 export class TodoService {
 
+  search: string = '';
+
   taskList: Todo[] = [
     new Todo({taskName: 'Faire le ménage', done: false, id: 1, user: 'ada'}),
     new Todo({taskName: 'Apprendre le Polonais', done: false, id: 2, user: 'Alan'}),
