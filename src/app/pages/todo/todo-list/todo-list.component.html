@@ -30,7 +30,7 @@
                     {{ task.user }}
                 </td>
                 <td>
-                    <button class="btn btn-warning" routerLink="/todo-form/{{task.id}}">Modifier</button>
+                    <button class="btn btn-warning" (click)="taskService.editTask(task)">Modifier</button>
                 </td>
                 <td>
                     <button class="btn btn-danger" (click)="taskService.deleteTask(task.id)">X</button>
