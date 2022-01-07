@@ -12,7 +12,6 @@ import { map } from 'rxjs/operators'
 })
 export class TodoService {
 
-
   readonly url = 'http://localhost:3000/tasks'
 
   taskList: Observable<Todo[]> = new Observable<Todo[]>();
