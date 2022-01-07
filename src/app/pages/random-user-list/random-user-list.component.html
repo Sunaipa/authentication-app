@@ -4,7 +4,7 @@
     <div class="row">
         <div class="mb-2 col">
             <label for="" class="form-label">Nationalité</label>
-            <select class="form-select" [(ngModel)]="search.nat">
+            <select class="form-select" [(ngModel)]="randomUserService.search.nat">
                 <option value="fr">Française</option>
                 <option value="de">Allemande</option>
                 <option value="dk">Danoise</option>
@@ -14,18 +14,18 @@
         </div>
         <div class="mb-2 col">
             <label for="" class="form-label">Gender</label>
-            <select class="form-select" [(ngModel)]="search.gender">
+            <select class="form-select" [(ngModel)]="randomUserService.search.gender">
                 <option value="male">Homme</option>
                 <option value="female">Femme</option>
             </select>
         </div>
         <div class="mb-2 col">
             <label for="" class="form-label">Nombre</label>
-            <input type="nombre" value="10" [(ngModel)]="search.results" >
+            <input type="nombre" value="10" [(ngModel)]="randomUserService.search.results" >
         </div>
     </div>
     
-    <button class="btn btn-primary w-100" (click)="loadUsers()">Rechercher</button>
+    <button class="btn btn-primary w-100" (click)="randomUserService.loadUsers()">Rechercher</button>
 </div>
 
 
@@ -39,7 +39,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let user of (response | async)">
+        <tr *ngFor="let user of (randomUserService.response | async)">
             <td><img [src]="user.picture"></td>
             <td>{{ user.firstName }}</td>
             <td>{{ user.name }}</td>
