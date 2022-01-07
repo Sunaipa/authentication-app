@@ -6,12 +6,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SecureComponent } from './pages/secure/secure.component';
+import { RandomUserListComponent } from './pages/random-user-list/random-user-list.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'secure', component: SecureComponent, canActivate:[AuthGuard]},
   {path: 'todo-list', component: TodoListComponent},
+  {path: 'user-list', component: RandomUserListComponent},
   {path: 'todo-form', component: TodoFormComponent, canActivate:[AuthGuard]},
   {path: 'todo-form/:id', component: TodoFormComponent, canActivate:[AuthGuard]},
   {path: '', redirectTo: '/home', pathMatch:'full'}

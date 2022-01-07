@@ -10,7 +10,10 @@ import { NotificationService } from './services/notification.service';
 export class AppComponent {
   title = 'MyApp';
 
-  constructor(public security: AuthentificationService, public notification: NotificationService) {
+  constructor(  public security: AuthentificationService, 
+                public notification: NotificationService,
+                ) {
+    
     
   }
 }

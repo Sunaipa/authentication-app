@@ -13,6 +13,9 @@ import { TodoListComponent } from './pages/todo/todo-list/todo-list.component';
 import { TodoFormComponent } from './pages/todo/todo-form/todo-form.component';
 import { SelectUserComponent } from './pages/todo/select-user/select-user.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { RandomUserListComponent } from './pages/random-user-list/random-user-list.component'
+
 
 @NgModule({
   declarations: [
@@ -22,13 +25,15 @@ import { SelectUserComponent } from './pages/todo/select-user/select-user.compon
     SecureComponent,
     TodoListComponent,
     TodoFormComponent,
-    SelectUserComponent
+    SelectUserComponent,
+    RandomUserListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgxWebstorageModule.forRoot(),
+    HttpClientModule
   ],
   providers: [AuthentificationService],
   bootstrap: [AppComponent]
