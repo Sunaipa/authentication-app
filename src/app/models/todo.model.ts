@@ -18,9 +18,6 @@ export class Todo{
             this.user = data.user;
             this.id = data.id || new Date().getTime();
 
-        } else {
-            this.id= new Date().getTime();
         }
-
     }
 }
